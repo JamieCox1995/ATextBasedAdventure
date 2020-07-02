@@ -1,0 +1,11 @@
+D:\Projects\TextBasedAdventure\ATextBasedAdventure\ATextBasedAdventure\bin\Debug\netcoreapp2.1\ATextBasedAdventure.deps.json
+D:\Projects\TextBasedAdventure\ATextBasedAdventure\ATextBasedAdventure\bin\Debug\netcoreapp2.1\ATextBasedAdventure.runtimeconfig.json
+D:\Projects\TextBasedAdventure\ATextBasedAdventure\ATextBasedAdventure\bin\Debug\netcoreapp2.1\ATextBasedAdventure.runtimeconfig.dev.json
+D:\Projects\TextBasedAdventure\ATextBasedAdventure\ATextBasedAdventure\bin\Debug\netcoreapp2.1\ATextBasedAdventure.dll
+D:\Projects\TextBasedAdventure\ATextBasedAdventure\ATextBasedAdventure\bin\Debug\netcoreapp2.1\ATextBasedAdventure.pdb
+D:\Projects\TextBasedAdventure\ATextBasedAdventure\ATextBasedAdventure\obj\Debug\netcoreapp2.1\ATextBasedAdventure.csprojAssemblyReference.cache
+D:\Projects\TextBasedAdventure\ATextBasedAdventure\ATextBasedAdventure\obj\Debug\netcoreapp2.1\ATextBasedAdventure.csproj.CoreCompileInputs.cache
+D:\Projects\TextBasedAdventure\ATextBasedAdventure\ATextBasedAdventure\obj\Debug\netcoreapp2.1\ATextBasedAdventure.AssemblyInfoInputs.cache
+D:\Projects\TextBasedAdventure\ATextBasedAdventure\ATextBasedAdventure\obj\Debug\netcoreapp2.1\ATextBasedAdventure.AssemblyInfo.cs
+D:\Projects\TextBasedAdventure\ATextBasedAdventure\ATextBasedAdventure\obj\Debug\netcoreapp2.1\ATextBasedAdventure.dll
+D:\Projects\TextBasedAdventure\ATextBasedAdventure\ATextBasedAdventure\obj\Debug\netcoreapp2.1\ATextBasedAdventure.pdb
