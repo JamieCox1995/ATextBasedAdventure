@@ -1,0 +1,11 @@
+C:\Users\jamie.Cox\Documents\GitHub\ATextBasedAdventure\ATextBasedAdventure\obj\Debug\netcoreapp2.0\ATextBasedAdventure.csprojAssemblyReference.cache
+C:\Users\jamie.Cox\Documents\GitHub\ATextBasedAdventure\ATextBasedAdventure\obj\Debug\netcoreapp2.0\ATextBasedAdventure.csproj.CoreCompileInputs.cache
+C:\Users\jamie.Cox\Documents\GitHub\ATextBasedAdventure\ATextBasedAdventure\obj\Debug\netcoreapp2.0\ATextBasedAdventure.AssemblyInfoInputs.cache
+C:\Users\jamie.Cox\Documents\GitHub\ATextBasedAdventure\ATextBasedAdventure\obj\Debug\netcoreapp2.0\ATextBasedAdventure.AssemblyInfo.cs
+C:\Users\jamie.Cox\Documents\GitHub\ATextBasedAdventure\ATextBasedAdventure\bin\Debug\netcoreapp2.0\ATextBasedAdventure.deps.json
+C:\Users\jamie.Cox\Documents\GitHub\ATextBasedAdventure\ATextBasedAdventure\bin\Debug\netcoreapp2.0\ATextBasedAdventure.runtimeconfig.json
+C:\Users\jamie.Cox\Documents\GitHub\ATextBasedAdventure\ATextBasedAdventure\bin\Debug\netcoreapp2.0\ATextBasedAdventure.runtimeconfig.dev.json
+C:\Users\jamie.Cox\Documents\GitHub\ATextBasedAdventure\ATextBasedAdventure\bin\Debug\netcoreapp2.0\ATextBasedAdventure.dll
+C:\Users\jamie.Cox\Documents\GitHub\ATextBasedAdventure\ATextBasedAdventure\bin\Debug\netcoreapp2.0\ATextBasedAdventure.pdb
+C:\Users\jamie.Cox\Documents\GitHub\ATextBasedAdventure\ATextBasedAdventure\obj\Debug\netcoreapp2.0\ATextBasedAdventure.dll
+C:\Users\jamie.Cox\Documents\GitHub\ATextBasedAdventure\ATextBasedAdventure\obj\Debug\netcoreapp2.0\ATextBasedAdventure.pdb
