@@ -1,55 +1,20 @@
 ﻿using System;
-using System.Text;
-using System.Linq;
 using System.Collections.Generic;
-using ATextBasedAdventure.Entities;
+using System.Text;
 
-namespace ATextBasedAdventure
+namespace ATextBasedAdventure.Entities
 {
-
-    class Game
+    class MainMenu
     {
-        private GameState _CurrentGameState;
-
-        public bool IsRunning
+        public void Update()
         {
-            get
-            {
-                return _CurrentGameState != GameState.Quit;
-            }
-        }
-
-        public Game()
-        {
-            InitializeGame();
-
-        }
-
-        public void InitializeGame()
-        {
-            _CurrentGameState = GameState.MainMenu;
-
             Console.WriteLine(" █████      ████████ ███████ ██   ██ ████████      █████  ██████  ██    ██ ███████ ███    ██ ████████ ██    ██ ██████  ███████ ");
             Console.WriteLine("██   ██        ██    ██       ██ ██     ██        ██   ██ ██   ██ ██    ██ ██      ████   ██    ██    ██    ██ ██   ██ ██      ");
             Console.WriteLine("███████        ██    █████     ███      ██        ███████ ██   ██ ██    ██ █████   ██ ██  ██    ██    ██    ██ ██████  █████   ");
             Console.WriteLine("██   ██        ██    ██       ██ ██     ██        ██   ██ ██   ██  ██  ██  ██      ██  ██ ██    ██    ██    ██ ██   ██ ██      ");
             Console.WriteLine("██   ██        ██    ███████ ██   ██    ██        ██   ██ ██████    ████   ███████ ██   ████    ██     ██████  ██   ██ ███████ ");
+                                                                                                                               
         }
 
-        public void Update()
-        {
-            switch(_CurrentGameState)
-            {
-
-            }
-        }
-    }
-
-    public enum GameState
-    {
-        MainMenu,
-        CharacterCreation,
-        Running,
-        Quit
     }
 }
