@@ -14,9 +14,22 @@ namespace ATextBasedAdventure.Entities.Interfaces
         public string Name;
         public string Description;
 
+        public Describable()
+        {
+
+        }
+
+        public Describable(string _Name, string _Description)
+        {
+            Name = _Name;
+            Description = _Description;
+        }
+
         public void Describe()
         {
             Console.WriteLine(Description);
+
+            Console.WriteLine("What would you like to do?");
         }
     }
 }

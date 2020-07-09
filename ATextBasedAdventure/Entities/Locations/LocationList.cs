@@ -6,9 +6,9 @@ using ATextBasedAdventure.Entities.Interfaces;
 namespace ATextBasedAdventure.Entities.Locations
 {
     // This is used at locations
-    class LocationList : Dictionary<string, LocationConnection>, IDescribable
+    class LocationList : Dictionary<string, Location>, IDescribable
     {
-        public LocationConnection ConnectionAt(string id)
+        public Location ConnectionAt(string id)
         {
             return this[id];
         }
@@ -24,7 +24,7 @@ namespace ATextBasedAdventure.Entities.Locations
             {
                 string description = "";
 
-                foreach (KeyValuePair<string, LocationConnection> connection in this)
+                foreach (KeyValuePair<string, Location> connection in this)
                 {
                     description += $"{connection.Value.Description} + \r\n";
                 }
