@@ -11,6 +11,7 @@ namespace ATextBasedAdventure
     {
         public static List<Location> Locations = new List<Location>();
 
+        private CommandParser CommandParser;
         private GameState _CurrentGameState;
 
         public bool IsRunning
@@ -28,6 +29,9 @@ namespace ATextBasedAdventure
 
         public void InitializeGame()
         {
+            this.CommandParser = new CommandParser();
+            this.CommandParser.InitializeParser(this);
+
             _CurrentGameState = GameState.MainMenu;
 
             ConstructWorld();
@@ -61,23 +65,26 @@ namespace ATextBasedAdventure
         public void Update()
         {
             string userCommand = Console.ReadLine();
-            
-            if(userCommand.ToLower() == "quit")
-            {
-                Environment.Exit(0);
-            }
-            else if (userCommand.ToLower() == "help")
-            {
-                ShowUsefulCommands();
-            }
-            else
-            {
-                Console.WriteLine("\nCommand not recognised. Use the command \"help\" for a list of possible commands.\n");
-            }
 
+            CommandParser.ParseCommand(userCommand, null);
         }
 
-        public void ShowUsefulCommands()
+        public void Quit()
+        {
+            Environment.Exit(0);
+        }
+
+        public void Save()
+        {
+            Console.WriteLine("Attempting to save game...");
+        }
+
+        public void Help()
+        {
+            ShowUsefulCommands();
+        }
+
+        private void ShowUsefulCommands()
         {
             Console.WriteLine($"\nUseful Commands: \n " +
                 $"\"help\" -> lists useful commands \n " +
