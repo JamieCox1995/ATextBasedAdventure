@@ -18,6 +18,7 @@ namespace ATextBasedAdventure
             InitializeVocabulary();
 
             this._Game = _Game;
+            _Character = _Game.Player;
         }
 
         private void InitializeVocabulary()
@@ -194,7 +195,20 @@ namespace ATextBasedAdventure
                     CommandWord verb = _Commands[0];
                     CommandWord noun = _Commands[1];
 
+                    switch(verb.Word)
+                    {
+                        case "take":
 
+                            break;
+
+                        case "drop":
+
+                            break;
+
+                        case "move":
+                            _Character.MoveDirection(noun.Word);
+                            break;
+                    }
                 }
             }
         }

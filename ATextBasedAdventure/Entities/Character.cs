@@ -15,30 +15,57 @@ namespace ATextBasedAdventure.Entities
             _CurrentLocation = _location;
         }
 
-        public void TravserseLocation(int _locationID)
+        public void MoveDirection(Directions _MoveDirection)
         {
-            if (_locationID != -1)
+            if(_MoveDirection != Directions.Unknown)
             {
-                Console.WriteLine("Cannot move to room");
-            }
-            else
-            {
-                Location playersNewLocation = Game.Locations[_locationID];
-
-                _CurrentLocation = playersNewLocation;
-
-                _CurrentLocation.Describe();
+                if(_CurrentLocation.ConnectedLocations[_MoveDirection] != null)
+                {
+                    _CurrentLocation = _CurrentLocation.ConnectedLocations[_MoveDirection];
+                    _CurrentLocation.Describe();
+                }
+                else
+                {
+                    Console.WriteLine($"There is no location to the {_MoveDirection}");
+                }
             }
         }
 
-        public void TraverseLocation(string _locationName)
+        public void MoveDirection(string _MoveDirection)
         {
+            if(!string.IsNullOrWhiteSpace(_MoveDirection))
+            {
+                Directions moveDirection;
 
-        }
+                switch(_MoveDirection)
+                {
+                    case "n":
+                    case "north":
+                        moveDirection = Directions.North;
+                        break;
 
-        public void TraverseLocation(Location _newLocation)
-        {
+                    case "e":
+                    case "east":
+                        moveDirection = Directions.East;
+                        break;
 
+                    case "s":
+                    case "south":
+                        moveDirection = Directions.South;
+                        break;
+
+                    case "w":
+                    case "west":
+                        moveDirection = Directions.West;
+                        break;
+
+                    default:
+                        moveDirection = Directions.Unknown;
+                        break;
+                }
+
+                MoveDirection(moveDirection);
+            }
         }
     }
 }

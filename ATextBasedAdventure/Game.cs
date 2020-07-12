@@ -11,6 +11,8 @@ namespace ATextBasedAdventure
     {
         public static List<Location> Locations = new List<Location>();
 
+        public Character Player;
+
         private CommandParser CommandParser;
         private GameState _CurrentGameState;
 
@@ -29,14 +31,16 @@ namespace ATextBasedAdventure
 
         public void InitializeGame()
         {
-            this.CommandParser = new CommandParser();
-            this.CommandParser.InitializeParser(this);
-
             _CurrentGameState = GameState.MainMenu;
 
             ConstructWorld();
 
             Locations[0].Describe();
+
+            Player = new Character("Steve", "A normal human", Locations[0]);
+
+            this.CommandParser = new CommandParser();
+            this.CommandParser.InitializeParser(this);
         }
 
         public void ConstructWorld()
