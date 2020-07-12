@@ -2,7 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using ATextBasedAdventure.Entities.Locations;
-using ATextBasedAdventure.Entities.Interfaces;
+using ATextBasedAdventure.General.Interfaces;
 
 namespace ATextBasedAdventure.Entities
 {
@@ -15,18 +15,19 @@ namespace ATextBasedAdventure.Entities
             _CurrentLocation = _location;
         }
 
+        #region Navigate Around World
         public void MoveDirection(Directions _MoveDirection)
         {
             if(_MoveDirection != Directions.Unknown)
             {
-                if(_CurrentLocation.ConnectedLocations[_MoveDirection] != null)
+                if(_CurrentLocation.ConnectedLocations.ContainsKey(_MoveDirection))
                 {
                     _CurrentLocation = _CurrentLocation.ConnectedLocations[_MoveDirection];
                     _CurrentLocation.Describe();
                 }
                 else
                 {
-                    Console.WriteLine($"There is no location to the {_MoveDirection}");
+                    Console.WriteLine($"There is nothing to the {_MoveDirection}");
                 }
             }
         }
@@ -65,6 +66,15 @@ namespace ATextBasedAdventure.Entities
                 }
 
                 MoveDirection(moveDirection);
+            }
+        }
+        #endregion
+
+        public void LookAround()
+        {
+            if(_CurrentLocation != null)
+            {
+                _CurrentLocation.Describe();
             }
         }
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ATextBasedAdventure.Entities.Interfaces
+namespace ATextBasedAdventure.General.Interfaces
 {
     interface IDescribable
     {

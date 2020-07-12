@@ -42,6 +42,13 @@ namespace ATextBasedAdventure
             Vocabulary.Add("pickup", WordType.Verb);
             Vocabulary.Add("drop", WordType.Verb);
             Vocabulary.Add("move", WordType.Verb);
+            Vocabulary.Add("look", WordType.Verb);
+
+            /*--------------------------------------------------------------------------------------
+             * TODO: This is where we are going to manually add all of the 
+             * Adverbs, such as 'around'
+             --------------------------------------------------------------------------------------*/
+            Vocabulary.Add("around", WordType.Adverb);
 
             /*--------------------------------------------------------------------------------------
              * TODO: This is where we are going to manually add all of the 
@@ -190,11 +197,12 @@ namespace ATextBasedAdventure
             // Processing commands such as take x, drop x, open x, etc.
             if(_Commands[0].WordType == WordType.Verb)
             {
-                if (_Commands[1].WordType == WordType.Noun)
-                {
-                    CommandWord verb = _Commands[0];
-                    CommandWord noun = _Commands[1];
+                CommandWord verb = _Commands[0];
+                CommandWord word = _Commands[1];
 
+
+                if (word.WordType == WordType.Noun)
+                {                    
                     switch(verb.Word)
                     {
                         case "take":
@@ -206,9 +214,23 @@ namespace ATextBasedAdventure
                             break;
 
                         case "move":
-                            _Character.MoveDirection(noun.Word);
+                            _Character.MoveDirection(word.Word);
                             break;
                     }
+
+                    return;
+                }
+
+                if(word.WordType == WordType.Adverb)
+                {
+                    switch(verb.Word)
+                    {
+                        case "look":
+                            if (word.Word == "around") _Character.LookAround();
+                            break;
+                    }
+
+                    return;
                 }
             }
         }
@@ -223,8 +245,6 @@ namespace ATextBasedAdventure
 
         }
         #endregion
-
-
     }
 
     class CommandWord
@@ -236,6 +256,7 @@ namespace ATextBasedAdventure
     enum WordType
     {
         Adjective,
+        Adverb,
         Article,
         Conjunction,
         Error,
