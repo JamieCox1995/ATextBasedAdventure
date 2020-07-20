@@ -9,20 +9,31 @@ namespace ATextBasedAdventure.General.Interfaces
         void Describe();
     }
 
-    public class Describable : IDescribable
+    public class Item : IDescribable
     {
         public string Name;
         public string Description;
 
-        public Describable()
+        public bool CanTake;
+
+        public Item()
         {
 
         }
 
-        public Describable(string _Name, string _Description)
+        public Item(string _Name, string _Description)
         {
             Name = _Name;
             Description = _Description;
+
+            CanTake = false;
+        }
+
+        public Item(string _Name, string _Description, bool _CanTake)
+        {
+            Name = _Name;
+            Description = _Description;
+            CanTake = _CanTake;
         }
 
         public void Describe()

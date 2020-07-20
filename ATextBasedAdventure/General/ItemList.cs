@@ -5,7 +5,7 @@ using ATextBasedAdventure.General.Interfaces;
 
 namespace ATextBasedAdventure.General
 {
-    class ItemList : List<Describable>
+    class ItemList : List<Item>
     {
         public string Describe()
         {
@@ -17,7 +17,7 @@ namespace ATextBasedAdventure.General
             }
             else
             {
-                foreach(Describable item in this)
+                foreach(Item item in this)
                 {
                     contents += item.Description + "; ";
                 }
@@ -26,9 +26,9 @@ namespace ATextBasedAdventure.General
             return contents;
         }
 
-        public Describable ThisObject(string _ItemName)
+        public Item ThisObject(string _ItemName)
         {
-            Describable item = null;
+            Item item = null;
 
             string itemLower = _ItemName.Trim().ToLower();
 

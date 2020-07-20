@@ -78,6 +78,7 @@ namespace ATextBasedAdventure
             Vocabulary.Add("west", WordType.Noun);
 
             // Now we are going to populate all of the Nouns and adjectives. These will be populated by getting all of the Describable Objects
+            Vocabulary.Add("sword", WordType.Noun);
         }
 
         public void ParseCommand(string _InputString, Character _PlayerCharacter)
@@ -206,11 +207,11 @@ namespace ATextBasedAdventure
                     switch(verb.Word)
                     {
                         case "take":
-
+                            _Character.PickupItem(word.Word);
                             break;
 
                         case "drop":
-
+                            _Character.DropItem(word.Word);
                             break;
 
                         case "move":

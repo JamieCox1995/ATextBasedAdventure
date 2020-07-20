@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
-using ATextBasedAdventure.Entities.Locations;
+using ATextBasedAdventure.General;
 using ATextBasedAdventure.General.Interfaces;
 
 namespace ATextBasedAdventure.Entities
 {
-    class Character : Describable
+    class Character : Item
     {
+        public ItemList _Items = new ItemList();
+
         private Location _CurrentLocation;
 
         public Character(string _name, string _description, Location _location) : base(_name, _description)
@@ -77,5 +79,70 @@ namespace ATextBasedAdventure.Entities
                 _CurrentLocation.Describe();
             }
         }
+
+        #region Picking up and Dropping Objects
+
+        public void PickupItem(string _ItemName)
+        {
+            Item item = _CurrentLocation._Items.ThisObject(_ItemName);
+
+            if (_ItemName != "")
+            {
+                if (item == null)
+                {
+                    Console.WriteLine($"There is no {_ItemName} here.");
+                }
+                else
+                {
+                    if (item.CanTake)
+                    {
+                        MoveItem(item, _CurrentLocation._Items, _Items);
+                    }
+                    else
+                    {
+                        Console.WriteLine("You cannot take that item.");
+                    }
+                }
+            }
+        }
+
+        public void PickupItem(Item _Item, ItemList _Container)
+        {
+
+        }
+
+        public void MoveItem(Item _Item, ItemList _FromContainer, ItemList _ToContainer)
+        {
+            _FromContainer.Remove(_Item);
+            _ToContainer.Add(_Item);
+        }
+
+        public void DropItem(string _ItemName)
+        {
+            Item item = _Items.ThisObject(_ItemName);
+
+            if(_ItemName == "")
+            {
+                Console.WriteLine("Please enter an item name.");
+                return;
+            }
+
+            if (item == null)
+            {
+                Console.WriteLine("You do not have any.");
+            }
+            else
+            {
+                MoveItem(item, _Items, _CurrentLocation._Items);
+                Console.WriteLine($"You have dropped {_ItemName}");
+            }
+
+        }
+
+        public void DropItem(Item _Item)
+        {
+
+        }
+        #endregion
     }
 }

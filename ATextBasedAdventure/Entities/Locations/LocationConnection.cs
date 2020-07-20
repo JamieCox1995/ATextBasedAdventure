@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
-using ATextBasedAdventure.Entities.Interfaces;
+using ATextBasedAdventure.General.Interfaces;
 
 namespace ATextBasedAdventure.Entities.Locations
 {
-    class LocationConnection : Describable
+    class LocationConnection : Item
     {
         public Location ConnectedLocation;
     }

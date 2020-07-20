@@ -5,7 +5,7 @@ using ATextBasedAdventure.General.Interfaces;
 
 namespace ATextBasedAdventure.Entities
 {
-    class ItemContainer : Describable
+    class ItemContainer : Item
     {
         private ItemList _Items = new ItemList();
 
@@ -20,7 +20,7 @@ namespace ATextBasedAdventure.Entities
             set { _Items = value; }
         }
 
-        public void AddItem(Describable _Item)
+        public void AddItem(Item _Item)
         {
             _Items.Add(_Item);
         }

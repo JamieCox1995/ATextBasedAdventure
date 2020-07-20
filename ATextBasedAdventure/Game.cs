@@ -3,7 +3,7 @@ using System.Text;
 using System.Linq;
 using System.Collections.Generic;
 using ATextBasedAdventure.Entities;
-using ATextBasedAdventure.Entities.Locations;
+using ATextBasedAdventure.General.Interfaces;
 
 namespace ATextBasedAdventure
 {
@@ -50,8 +50,12 @@ namespace ATextBasedAdventure
                 Name = "Heirloom Sphere: Entrance",
                 Description = "You are stood in a large, cavernous room with smooth walls that taper to a point above the centre of the room.",
 
-                ConnectedLocations = new Dictionary<Directions, Location>()
+                ConnectedLocations = new Dictionary<Directions, Location>(),
+
+                
             });
+
+            Locations[0]._Items.Add(new Item("Sword", "an ancient sword of magical origins.", true));
 
             Locations.Add(new Location
             {
