@@ -80,6 +80,11 @@ namespace ATextBasedAdventure.Entities
             }
         }
 
+        public void LookAtInventory()
+        {
+            Console.WriteLine($"Your inventory contains {_Items.Describe()}");
+        }
+
         #region Picking up and Dropping Objects
 
         public void PickupItem(string _ItemName)
@@ -97,6 +102,8 @@ namespace ATextBasedAdventure.Entities
                     if (item.CanTake)
                     {
                         MoveItem(item, _CurrentLocation._Items, _Items);
+
+                        Console.WriteLine($"You have picked up the {_ItemName}");
                     }
                     else
                     {
@@ -134,7 +141,7 @@ namespace ATextBasedAdventure.Entities
             else
             {
                 MoveItem(item, _Items, _CurrentLocation._Items);
-                Console.WriteLine($"You have dropped {_ItemName}");
+                Console.WriteLine($"You have dropped the {_ItemName}");
             }
 
         }

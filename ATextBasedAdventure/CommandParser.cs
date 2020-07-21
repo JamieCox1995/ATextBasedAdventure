@@ -33,6 +33,7 @@ namespace ATextBasedAdventure
             Vocabulary.Add("help", WordType.Utility);
             Vocabulary.Add("quit", WordType.Utility);
             Vocabulary.Add("save", WordType.Utility);
+            Vocabulary.Add("inventory", WordType.Utility);
 
             /*--------------------------------------------------------------------------------------
              * TODO: This is where we are going to manually add all of the 
@@ -170,6 +171,10 @@ namespace ATextBasedAdventure
 
                     case "save":
                         _Game.Save();
+                        break;
+
+                    case "inventory":
+                        _Character.LookAtInventory();
                         break;
                 }
             }
