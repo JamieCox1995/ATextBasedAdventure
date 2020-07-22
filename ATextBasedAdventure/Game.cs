@@ -51,11 +51,10 @@ namespace ATextBasedAdventure
                 Description = "You are stood in a large, cavernous room with smooth walls that taper to a point above the centre of the room.",
 
                 ConnectedLocations = new Dictionary<Directions, Location>(),
-
-                
             });
 
             Locations[0]._Items.Add(new Item("Sword", "an ancient sword of magical origins.", true));
+            Locations[0]._Items.Add(new ItemContainer("Chest", "a wooden chest with a broken lock", new General.ItemList { new Item("Apple", "a apple", true) }, true));
 
             Locations.Add(new Location
             {

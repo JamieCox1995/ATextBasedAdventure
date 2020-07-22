@@ -77,6 +77,7 @@ namespace ATextBasedAdventure.Entities
             if(_CurrentLocation != null)
             {
                 _CurrentLocation.Describe();
+                Console.WriteLine($"In in the room you see {_CurrentLocation._Items.Describe()}");
             }
         }
 
