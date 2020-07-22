@@ -58,6 +58,7 @@ namespace ATextBasedAdventure
             Vocabulary.Add("in", WordType.Preposition);
             Vocabulary.Add("into", WordType.Preposition);
             Vocabulary.Add("at", WordType.Preposition);
+            Vocabulary.Add("from", WordType.Preposition);
 
             /*--------------------------------------------------------------------------------------
              * TODO: This is where we are going to manually add all of the 
@@ -248,6 +249,8 @@ namespace ATextBasedAdventure
 
         private void ProcessQuadWordCommand(List<CommandWord> _Commands)
         {
+            // handle takefrom/putin combos.
+
 
         }
         #endregion

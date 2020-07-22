@@ -9,9 +9,17 @@ namespace ATextBasedAdventure.Entities
     {
         private ItemList _Items = new ItemList();
 
+        public bool CanOpen = false;
+
         public ItemContainer(string _Name, string _Description, ItemList _Items) : base(_Name, _Description)
         {
             this._Items = _Items;
+        }
+
+        public ItemContainer(string _Name, string _Description, ItemList _Items, bool _CanOpen) : base(_Name, _Description)
+        {
+            this._Items = _Items;
+            CanOpen = _CanOpen;
         }
 
         public ItemList Items
