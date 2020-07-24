@@ -86,6 +86,27 @@ namespace ATextBasedAdventure.Entities
             Console.WriteLine($"Your inventory contains {_Items.Describe()}");
         }
 
+        public void LookAtItem(string _ItemName)
+        {
+            Item lookAtTarget = _CurrentLocation._Items.ThisObject(_ItemName);
+
+            if(_ItemName == "")
+            {
+                Console.WriteLine("Please enter an item you want to look at.");
+            }
+            else
+            {
+                if(lookAtTarget == null)
+                {
+                    Console.WriteLine($"There is no {_ItemName}");
+                }
+                else
+                {
+                    lookAtTarget.Describe();
+                }
+            }
+        }
+
         #region Picking up and Dropping Objects
 
         public void PickupItem(string _ItemName)
@@ -152,5 +173,12 @@ namespace ATextBasedAdventure.Entities
 
         }
         #endregion
+
+        public bool SearchForItemInInventory(string _ItemName, out Item _Item)
+        {
+            _Item = null;
+
+            return true;
+        }
     }
 }

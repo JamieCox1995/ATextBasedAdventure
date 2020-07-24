@@ -81,6 +81,7 @@ namespace ATextBasedAdventure
 
             // Now we are going to populate all of the Nouns and adjectives. These will be populated by getting all of the Describable Objects
             Vocabulary.Add("sword", WordType.Noun);
+            Vocabulary.Add("chest", WordType.Noun);
         }
 
         public void ParseCommand(string _InputString, Character _PlayerCharacter)
@@ -244,7 +245,23 @@ namespace ATextBasedAdventure
 
         private void ProcessTriWordCommand(List<CommandWord> _Commands)
         {
+            CommandWord first, second, third;
+            first = _Commands[0];
+            second = _Commands[1];
+            third = _Commands[2];
 
+            if(first.WordType == WordType.Verb)
+            {
+                if(second.WordType == WordType.Preposition)
+                {
+                    switch(first.Word + second.Word)
+                    {
+                        case "lookat":
+                            _Character.LookAtItem(third.Word);
+                            break;
+                    }
+                }
+            }
         }
 
         private void ProcessQuadWordCommand(List<CommandWord> _Commands)
